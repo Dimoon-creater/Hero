@@ -1,0 +1,21 @@
+from Hero import *
+
+heroes = []
+
+heroes.append(Hero('Фокс', True, 240))
+heroes.append(Hero('Шемира', False, 240))
+
+while True:
+    command = input("Write a command \r\n")
+
+    if command == "Add":
+        new_hero = Hero()
+        new_hero.add()
+        heroes.append(new_hero)
+
+    if command == "Exit":
+        break
+
+    if command.upper() == "SHOW":
+        for hero in heroes:
+            print(hero.show())
