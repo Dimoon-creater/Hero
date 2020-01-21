@@ -8,14 +8,16 @@ heroes.append(Hero('Шемира', False, 240))
 while True:
     command = input("Write a command \r\n")
 
-    if command == "Add":
+    if command.upper() == "ADD":
         new_hero = Hero()
         new_hero.add()
         heroes.append(new_hero)
 
-    if command == "Exit":
+    if command.upper() == "EXIT":
         break
+
 
     if command.upper() == "SHOW":
         for hero in heroes:
             print(hero.show())
+
