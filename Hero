@@ -1,24 +1,24 @@
 class Hero:
     def __init__(self, name=None, atype=True, LVL=1):
-        self.name=name
-        self.atype=atype
-        self.LVL=LVL
+        self.name = name
+        self.atype = atype
+        self.LVL = LVL
         
-        self.items=[]
+        self.items = []
         
     def show(self):
         if self.atype:
-            str_atype='Tank'
+            str_atype = 'Tank'
         else:
-            str_atype='Support'
+            str_atype = 'Support'
             
-        return 'Name:' + str(self.name) + ', atype:' + ', LVL:' + str(self.LVL) 
+        return 'Name: ' + str(self.name) + ', atype: ' + str_atype + ', LVL: ' + str(self.LVL) 
     
     def add(self):
         self.name = input('Write name: ')
-        self.LVL = input('Write LVL: ' )
+        self.LVL = int(input('Write LVL: ' ))
         str_atype = input('Write atype (T/S): ')
-        if str_atype =='S':
+        if str_atype == 'S':
             self.atype = False
         else:
             self.atype = True
