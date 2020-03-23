@@ -1,0 +1,72 @@
+class Hero:
+    def __init__ (self, name = None, atype = True, LVL = 1): 
+        self.name = name 
+         self.atype = atype 
+         self.LVL = LVL 
+ 
+    def show (self):
+        if self.atype:
+            str_atype = 'Tank' 
+        else: 
+            str_atype = 'Support' 
+ 
+        return 'Name: ' + str (self.name) + '; \r\natype: ' + str_atype + '; \r\nLVL: ' + str (self.LVL) + '; \r\n' 
+ 
+    def add (self):
+        self.name = input ('Write name: ') 
+        self.LVL = int (input ('Write LVL: ')) 
+        str_atype = input ('Write atype (T/S): ') 
+        if str_atype == 'S':
+            self.atype = False 
+        else: 
+            self.atype = True 
+ 
+class Item: 
+    def __init__ (self, Name = None, RelicLVL = 0, ArmorLVL = 0, AbilityLVL = 0): 
+        self.Name = Name 
+        self.RelicLVL = RelicLVL 
+        self.ArmorLVL = ArmorLVL 
+        self.AbilityLVL = AbilityLVL 
+ 
+    def showItem (self): 
+        return 'Name: ' + str (self.Name) + '; RelicLVL: ' + str (self.RelicLVL) + '; ArmorLVL: ' + str (self.ArmorLVL) + '; AbilityLVL: ' + str (self.AbilityLVL) 
+ 
+    def addItem (self):
+        self.Name = input ('Write Name: ') 
+        self.Relic = int (input ('Write RelicLVL: ')) 
+        self.ArmorLVL = int (input ('Write ArmorLVL: ')) 
+        self.AbilityLVL = int (input ('Write AbilityLVL: ')) 
+ 
+heroes =[] 
+  
+heroes.append (Hero ('Fox', True, 240)) 
+heroes.append (Hero ('Shemira', False, 240)) 
+  
+items =[] 
+  
+items.append (Item ('Fox', 10, 9, 3)) 
+items.append (Item ('Shemira', 22, 10, 3)) 
+ 
+while True:
+    command = input ("Write a command \r\n") 
+ 
+    if command.upper () == "ADD":
+        new_hero = Hero () 
+        new_hero.add () 
+        heroes.append (new_hero)  
+    if command.upper () == "ADDITEM":
+        new_Item = Item () 
+	    new_Item.addItem () 
+	    items.append (new_Item) 
+ 
+    if command.upper () == "EXIT":
+    break 
+ 
+ 
+    if command.upper () == "SHOW":
+        for hero  in heroes:
+            print (hero.show ()) 
+ 
+    if command.upper () == "SHOWITEM":
+        for Item  in items:
+            print (items.showItem ()) 
