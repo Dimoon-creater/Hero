@@ -1,13 +1,13 @@
 class Hero:
     def __init__ (self, name = None, atype = True, LVL = 1): 
         self.name = name 
-         self.atype = atype 
-         self.LVL = LVL 
+        self.atype = atype 
+        self.LVL = LVL 
  
     def show (self):
         if self.atype:
             str_atype = 'Tank' 
-        else: 
+        else:
             str_atype = 'Support' 
  
         return 'Name: ' + str (self.name) + '; \r\natype: ' + str_atype + '; \r\nLVL: ' + str (self.LVL) + '; \r\n' 
@@ -56,11 +56,11 @@ while True:
         heroes.append (new_hero)  
     if command.upper () == "ADDITEM":
         new_Item = Item () 
-	    new_Item.addItem () 
-	    items.append (new_Item) 
+        new_Item.addItem () 
+        items.append (new_Item) 
  
     if command.upper () == "EXIT":
-    break 
+        break 
  
  
     if command.upper () == "SHOW":
